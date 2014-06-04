@@ -22,7 +22,9 @@ public class Balloon : MonoBehaviour {
 
         speed = Random.Range(1f, 3f);
 
-        transform.FindChild("Sprite").GetComponent<SpriteRenderer>().sprite = sprites[(int) Random.Range(0,sprites.Length)];
+        int rand = (int) Random.Range(0, sprites.Length);
+        Debug.Log(sprites[rand]);
+        transform.FindChild("Sprite").GetComponent<SpriteRenderer>().sprite = sprites[rand];
         transform.FindChild("Sprite").renderer.sortingOrder = (int) -randz;
 	}
 	
@@ -41,10 +43,22 @@ public class Balloon : MonoBehaviour {
         }
 	}
 
-    void OnDestroy() {
-    }
-
     public void Fly(){
         activated = true;
     }
+
+    public void Die(){
+        //Debug.Log("going to die");
+        activated = false;
+        collider.enabled = false;
+        //animation.Play("Explosion");
+        GetComponent<Animator>().SetTrigger("Dying");
+        //GetComponent<Animator>().animation.Play();
+        StartCoroutine(DeathTimer());
+    }
+
+    IEnumerator DeathTimer(){
+            yield return new WaitForSeconds(0.25f);
+            Destroy(gameObject);
+        }
 }

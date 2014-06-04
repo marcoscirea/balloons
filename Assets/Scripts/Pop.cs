@@ -59,7 +59,11 @@ public class Pop : MonoBehaviour {
         {
             //Debug.Log("got me");
             points +=1;
-            Destroy(hit.collider.gameObject);
+            //Destroy(hit.collider.gameObject);
+            if (hit.collider.gameObject.GetComponent<Balloon>()!=null)
+                hit.collider.gameObject.GetComponent<Balloon>().Die();
+            else
+                hit.collider.gameObject.GetComponent<EvilBalloon>().Die();
         }
     }
 }
