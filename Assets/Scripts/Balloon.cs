@@ -18,11 +18,12 @@ public class Balloon : MonoBehaviour {
         float randx = Random.Range((int)lowedge.x+0.3f, (int)highedge.x);
         float randz = Random.Range(-2, 2);
         transform.position = new Vector3(randx, lowedge.y-2f, randz);
-        renderer.sortingOrder = (int) -randz;
+
 
         speed = Random.Range(1f, 3f);
 
-        GetComponent<SpriteRenderer>().sprite = sprites[(int) Random.Range(0,sprites.Length)];
+        transform.FindChild("Sprite").GetComponent<SpriteRenderer>().sprite = sprites[(int) Random.Range(0,sprites.Length)];
+        transform.FindChild("Sprite").renderer.sortingOrder = (int) -randz;
 	}
 	
 	// Update is called once per frame
@@ -30,7 +31,7 @@ public class Balloon : MonoBehaviour {
         if (activated)
         {
             transform.position += Vector3.up * Time.deltaTime* speed;
-            Debug.Log(highedge.y);
+            //Debug.Log(highedge.y);
             if (transform.position.y > highedge.y+(gameObject.GetComponent<BoxCollider>().size.y/2))
             {
                 //Debug.Log("missedme!");
