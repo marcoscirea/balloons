@@ -13,11 +13,13 @@ public class StartGame : MonoBehaviour {
 
     Vector3 startingPosition;
     float startingSize;
+    Quaternion startingRotation;
 
 	// Use this for initialization
 	void Start () {
         startingSize = camera.orthographicSize;
         startingPosition = transform.position;
+        startingRotation = transform.rotation;
         audio.Play();
 	}
 	
@@ -37,6 +39,18 @@ public class StartGame : MonoBehaviour {
                     //Debug.Log(audio.time + " " + changes [currentScene]);
                     transform.position = shots [currentScene];
                     camera.orthographicSize = shotSizes [currentScene];
+
+                    if (!first){
+                        if (currentScene%2==0){
+                            transform.rotation=startingRotation;
+                            transform.Rotate(new Vector3(0,0,20));
+                        }
+                        else{
+                            transform.rotation=startingRotation;
+                            transform.Rotate(new Vector3(0,0,-20));
+                        }
+                    }
+
                     currentScene++;
                 }
             } else
@@ -58,6 +72,7 @@ public class StartGame : MonoBehaviour {
                 {
                     transform.position = startingPosition;
                     camera.orthographicSize = startingSize;
+                    transform.rotation = startingRotation;
                     full = true;
                 }
             }
