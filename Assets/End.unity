@@ -104,7 +104,7 @@ TextMesh:
   m_CharacterSize: 1
   m_LineSpacing: 1
   m_Anchor: 4
-  m_Alignment: 1
+  m_Alignment: 2
   m_TabSize: 4
   m_FontSize: 0
   m_FontStyle: 1
@@ -141,10 +141,10 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 204059325}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.86775339, y: 1.18981051, z: -.270000011}
+  m_LocalPosition: {x: -3.5130794, y: 1.35794055, z: -.270000011}
   m_LocalScale: {x: .0138971992, y: .0138971992, z: .0138971992}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1186685923}
 --- !u!114 &204059329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,12 +183,12 @@ TextMesh:
   m_Text: "You have failed.\r\nThe balloons \r\nare upon us."
   m_OffsetZ: 0
   m_CharacterSize: 1
-  m_LineSpacing: 1
+  m_LineSpacing: .819999993
   m_Anchor: 4
   m_Alignment: 1
   m_TabSize: 4
   m_FontSize: 0
-  m_FontStyle: 1
+  m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 12800000, guid: 8ab51bc6f12569047a0173c542bc334e, type: 3}
   m_Color:
@@ -222,8 +222,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 370583529}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.797616, z: 0}
-  m_LocalScale: {x: .0126780644, y: .0126780644, z: .0126780644}
+  m_LocalPosition: {x: -0, y: 3.65665388, z: 0}
+  m_LocalScale: {x: .012118428, y: .012118428, z: .012118428}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!1 &384257585
@@ -427,6 +427,35 @@ Transform:
   m_LocalScale: {x: .603287697, y: .603287697, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!1 &1186685922
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1186685923}
+  m_Layer: 0
+  m_Name: TextScore
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1186685923
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1186685922}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.89201021, y: -.203371167, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1647661336}
+  - {fileID: 204059328}
+  - {fileID: 1732823195}
+  m_Father: {fileID: 0}
 --- !u!1 &1647661333
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,7 +485,7 @@ TextMesh:
   m_CharacterSize: 1
   m_LineSpacing: 1
   m_Anchor: 4
-  m_Alignment: 1
+  m_Alignment: 0
   m_TabSize: 4
   m_FontSize: 0
   m_FontStyle: 1
@@ -493,10 +522,10 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1647661333}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.2334218, y: 1.18981051, z: -.270000011}
+  m_LocalPosition: {x: -1.08147645, y: 1.35794055, z: -.270000011}
   m_LocalScale: {x: .0138971992, y: .0138971992, z: .0138971992}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1186685923}
 --- !u!1 &1732823192
 GameObject:
   m_ObjectHideFlags: 0
@@ -563,10 +592,10 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1732823192}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.1060667, z: -.270000011}
+  m_LocalPosition: {x: -1.96249175, y: 2.09799385, z: -.270000011}
   m_LocalScale: {x: .0138971992, y: .0138971992, z: .0138971992}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1186685923}
 --- !u!1 &1836594168
 GameObject:
   m_ObjectHideFlags: 0
@@ -613,8 +642,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1836594168}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .204973698, y: -1.98000002, z: 0}
-  m_LocalScale: {x: .784163058, y: .784163594, z: 1}
+  m_LocalPosition: {x: .134538427, y: -2.17218232, z: 0}
+  m_LocalScale: {x: .690515757, y: .690514922, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!1 &1917781594
