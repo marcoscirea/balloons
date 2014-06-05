@@ -23,9 +23,39 @@ public class Balloon : MonoBehaviour {
         speed = Random.Range(1f, 3f);
 
         int rand = (int) Random.Range(0, sprites.Length);
-        Debug.Log(sprites[rand]);
+        //Debug.Log(sprites[rand]);
         transform.FindChild("Sprite").GetComponent<SpriteRenderer>().sprite = sprites[rand];
         transform.FindChild("Sprite").renderer.sortingOrder = (int) -randz;
+
+        //set color of exploding animation: blue 0-2, green 3, red 7-8, purple 5-6, yellow 4,9
+        switch (rand)
+        {
+            case 0:
+            case 1:
+            case 2:
+                //blue color = 1
+                GetComponent<Animator>().SetInteger("Color", 1);
+                break;
+            case 3:
+                //green color = 0
+                GetComponent<Animator>().SetInteger("Color", 0);
+                break;
+            case 9:
+                //yellow = 3
+                GetComponent<Animator>().SetInteger("Color", 3);
+                break;
+            case 4:
+            case 7:
+            case 8:
+                //red = 2
+                GetComponent<Animator>().SetInteger("Color", 2);
+                break;
+            case 5:
+            case 6:
+                //purple = 4
+                GetComponent<Animator>().SetInteger("Color", 4);
+                break;
+        }
 	}
 	
 	// Update is called once per frame
@@ -34,10 +64,10 @@ public class Balloon : MonoBehaviour {
         {
             transform.position += Vector3.up * Time.deltaTime* speed;
             //Debug.Log(highedge.y);
-            if (transform.position.y > highedge.y+(gameObject.GetComponent<BoxCollider>().size.y/2))
+            if (transform.position.y > highedge.y+(gameObject.GetComponent<BoxCollider>().size.y/3))
             {
                 //Debug.Log("missedme!");
-                GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Pop>().lives--;
+                GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Pop>().LoseLife();
                 Destroy(gameObject);
             }
         }
@@ -54,11 +84,12 @@ public class Balloon : MonoBehaviour {
         //animation.Play("Explosion");
         GetComponent<Animator>().SetTrigger("Dying");
         //GetComponent<Animator>().animation.Play();
+        audio.Play();
         StartCoroutine(DeathTimer());
     }
 
     IEnumerator DeathTimer(){
-            yield return new WaitForSeconds(0.25f);
+            yield return new WaitForSeconds(0.217f);
             Destroy(gameObject);
         }
 }

@@ -14,6 +14,8 @@ public class StartGame : MonoBehaviour {
     Vector3 startingPosition;
     float startingSize;
     Quaternion startingRotation;
+    GUIText skip;
+    bool skipping = false;
 
 	// Use this for initialization
 	void Start () {
@@ -21,6 +23,8 @@ public class StartGame : MonoBehaviour {
         startingPosition = transform.position;
         startingRotation = transform.rotation;
         audio.Play();
+
+        skip = GameObject.Find("Skip").GetComponent<GUIText>();
 	}
 	
 	// Update is called once per frame
@@ -73,6 +77,7 @@ public class StartGame : MonoBehaviour {
                     transform.position = startingPosition;
                     camera.orthographicSize = startingSize;
                     transform.rotation = startingRotation;
+                    skip.enabled=false;
                     full = true;
                 }
             }
@@ -88,17 +93,53 @@ public class StartGame : MonoBehaviour {
         int i = 0;
         while (i < Input.touchCount)
         {
-            if (Input.GetTouch(i).phase == TouchPhase.Began)
-            {
+            if (full)
                 Application.LoadLevel("Game");
+            else{
+                if (!skipping){
+                    skip.enabled = true;
+                    skipping=true;
+                }
+                else {
+                    full=true;
+                    if (currentScene == 0){
+                        if (GameObject.Find("Black")!=null)
+                            GameObject.Find("Black").SetActive(false);
+                        GameObject.Find("TitleText").renderer.enabled=true;
+                    }
+                    transform.position = startingPosition;
+                    camera.orthographicSize = startingSize;
+                    transform.rotation = startingRotation;
+                    skip.enabled=false;
+                }
             }
+
             ++i;
         }
         
         //mouse version
         if (Input.GetMouseButtonDown(0))
         {
-            Application.LoadLevel("Game");
+            if (full)
+                Application.LoadLevel("Game");
+            else{
+                if (!skipping){
+                    skip.enabled = true;
+                    skipping=true;
+                }
+                else {
+                    full=true;
+                    if (currentScene == 0){
+                        if (GameObject.Find("Black")!=null)
+                            GameObject.Find("Black").SetActive(false);
+                        GameObject.Find("TitleText").renderer.enabled=true;
+                    }
+                    transform.position = startingPosition;
+                    camera.orthographicSize = startingSize;
+                    transform.rotation = startingRotation;
+                    skip.enabled=false;
+                }
+            }
         }
 	}
 }

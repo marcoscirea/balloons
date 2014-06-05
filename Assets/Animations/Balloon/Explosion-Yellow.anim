@@ -5,7 +5,7 @@ AnimationClip:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Explosion
+  m_Name: Explosion-Yellow
   serializedVersion: 4
   m_AnimationType: 2
   m_Compressed: 0
@@ -23,6 +23,11 @@ AnimationClip:
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 31
+      - time: .200000003
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 31
       m_PreInfinity: 2
       m_PostInfinity: 2
     attribute: m_Enabled
@@ -32,21 +37,17 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: .0333333351
-      value: {fileID: 21300000, guid: d6b766e71c41871438cfeefa235f88cf, type: 3}
+      value: {fileID: 21300000, guid: fbf3e6f14a653794982a6289b65104e1, type: 3}
     - time: .0666666701
-      value: {fileID: 21300000, guid: 89e4174f76365294b99d7a90a520b03a, type: 3}
+      value: {fileID: 21300000, guid: 87fe5eb0073de8d4286e6b8440a618a6, type: 3}
     - time: .100000001
-      value: {fileID: 21300000, guid: 328ba25a59a16d7488d7fec089035dd8, type: 3}
+      value: {fileID: 21300000, guid: 36909978f9d1d124a91ac4505b9348aa, type: 3}
     - time: .13333334
-      value: {fileID: 21300000, guid: 4f28ba614b92bc440bcc9c13818cfbdc, type: 3}
+      value: {fileID: 21300000, guid: fc9304699e56c154883b338d5af30b0e, type: 3}
     - time: .166666672
-      value: {fileID: 21300000, guid: 497654fb8a0bbe8488b39fc42f2a56ec, type: 3}
+      value: {fileID: 21300000, guid: 24b26da2316470b4988b3964943e0cdd, type: 3}
     - time: .200000003
-      value: {fileID: 21300000, guid: 383314a16e0411743b4b455dbe7d7446, type: 3}
-    - time: .233333334
-      value: {fileID: 21300000, guid: ff9ad288290446e468dcb601809e6c51, type: 3}
-    - time: .266666681
-      value: {fileID: 21300000, guid: 6f32f304cf4ba1c45b97f3776c363ec6, type: 3}
+      value: {fileID: 21300000, guid: 9066e6d750623bf4db4134c60915580c, type: 3}
     attribute: m_Sprite
     path: Explosion
     classID: 212
@@ -59,7 +60,7 @@ AnimationClip:
   m_AnimationClipSettings:
     serializedVersion: 2
     m_StartTime: 0
-    m_StopTime: .283333361
+    m_StopTime: .216666669
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -78,6 +79,11 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 31
+      - time: .200000003
         value: 0
         inSlope: Infinity
         outSlope: Infinity

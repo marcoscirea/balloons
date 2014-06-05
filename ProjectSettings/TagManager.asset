@@ -46,3 +46,7 @@ TagManager:
     userID: 0
     uniqueID: 0
     locked: 0
+  - name: Head
+    userID: 2
+    uniqueID: 27321015
+    locked: 0

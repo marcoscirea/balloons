@@ -8,7 +8,7 @@ public class Message : MonoBehaviour {
     public int timerlength = 3;
     float timerstart;
     TextMesh t;
-    public string[] messages = {"Fabulous", "Marvelous", "Ballooney", "OMG"};
+    string[] messages = {"Fabulous", "Marvelous", "Ballooney", "OMG", "Poptastic"};
 
     public Color[] colors;
 

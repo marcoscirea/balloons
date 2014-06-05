@@ -20,6 +20,9 @@ public class EvilBalloon : MonoBehaviour {
         transform.position = new Vector3(randx, lowedge.y-2f, randz);
 
         speed = Random.Range(3f, 3.5f);
+
+        //yellow = 3
+        GetComponent<Animator>().SetInteger("Color", 3);
     }
     
     // Update is called once per frame
@@ -34,7 +37,7 @@ public class EvilBalloon : MonoBehaviour {
             if (transform.position.y > highedge.y+(gameObject.GetComponent<BoxCollider>().size.y/2))
             {
                 //Debug.Log("missedme!");
-                GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Pop>().lives--;
+                GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Pop>().LoseLife();
                 Destroy(gameObject);
             }
         }
@@ -53,11 +56,12 @@ public class EvilBalloon : MonoBehaviour {
         collider.enabled = false;
         //animation.Play("Explosion");
         GetComponent<Animator>().SetTrigger("Dying");
+        audio.Play();
         StartCoroutine(DeathTimer());
     }
     
     IEnumerator DeathTimer(){
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(0.217f);
         Destroy(gameObject);
     }
 }

@@ -4,12 +4,12 @@ using System.Collections;
 public class Spawning : MonoBehaviour
 {
 
-    public int max = 10;
-    public int pooln = 20;
-    public int evilpooln = 5;
+    public int max = 5; 
+    public int pooln = 20; 
+    public int evilpooln = 5; 
     public GameObject balloon;
     public GameObject evil;
-    public float maxSpawnTime = 2f;
+    public float maxSpawnTime = 1f;
     public float minSpawnTime = 0f;
     float timerlength;
     float timerstart;
@@ -17,6 +17,11 @@ public class Spawning : MonoBehaviour
     ArrayList moving = new ArrayList();
     ArrayList evilpool = new ArrayList();
     public float evilChance = 0.01f;
+
+    //level related variables
+    public int newlevel = 5;
+    float levelStartTime;
+
 
     // Use this for initialization
     void Start()
@@ -26,11 +31,23 @@ public class Spawning : MonoBehaviour
         for (int i = 0; i< evilpooln; i++)
             evilpool.Add(Instantiate(evil));
         SetTimer();
+
+        levelStartTime = Time.time;
     }
     
     // Update is called once per frame
     void Update()
     {
+        if (Time.time > levelStartTime + newlevel)
+        {
+            levelStartTime = Time.time;
+            max++;
+            evilChance+=0.01f;
+            maxSpawnTime-=0.01f;
+            Debug.Log("new level, max="+max+ " evil="+evilChance+ " maxSpawnTime="+maxSpawnTime);
+        }
+
+
         CheckForDeads(pool);
         CheckForDeads(moving);
         CheckForDeads(evilpool);
