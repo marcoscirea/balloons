@@ -43,7 +43,8 @@ public class Spawning : MonoBehaviour
             levelStartTime = Time.time;
             max++;
             evilChance+=0.01f;
-            maxSpawnTime-=0.01f;
+            if (maxSpawnTime>0.03f)
+                maxSpawnTime-=0.03f;
             Debug.Log("new level, max="+max+ " evil="+evilChance+ " maxSpawnTime="+maxSpawnTime);
         }
 

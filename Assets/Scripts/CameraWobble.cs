@@ -5,11 +5,15 @@ public class CameraWobble : MonoBehaviour {
 
     Vector3 direction;
     Vector3 startingPosition;
+    bool timer = true;
+    float timerStart;
+    float timerLength= 3f;
 
 	// Use this for initialization
 	void Start () {
         direction = Vector3.zero;
         startingPosition = transform.position;
+        timerStart = Time.time;
 	}
 	
 	// Update is called once per frame
@@ -19,18 +23,27 @@ public class CameraWobble : MonoBehaviour {
         }
         transform.position += direction * Time.deltaTime*0.1f;
 
-        int i = 0;
-        while (i < Input.touchCount)
+        if (!timer)
         {
-            Application.LoadLevel("Game");
+            int i = 0;
+            while (i < Input.touchCount)
+            {
+                Application.LoadLevel("Game");
             
-            ++i;
-        }
+                ++i;
+            }
         
-        //mouse version
-        if (Input.GetMouseButtonDown(0))
+            //mouse version
+            if (Input.GetMouseButtonDown(0))
+            {
+                Application.LoadLevel("Game");
+            }
+        } else
         {
-            Application.LoadLevel("Game");
+            if (Time.time > timerStart+timerLength){
+                timer = false;
+                GameObject.Find("Skip").guiText.enabled = true;
+            }
         }
 	}
 }
