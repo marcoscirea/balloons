@@ -649,7 +649,7 @@ GUIText:
   m_TabSize: 4
   m_Font: {fileID: 12800000, guid: 8ab51bc6f12569047a0173c542bc334e, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 25
+  m_FontSize: 22
   m_FontStyle: 1
   m_Color:
     serializedVersion: 2
