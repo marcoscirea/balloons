@@ -370,6 +370,56 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_Sprite: {fileID: 21300000, guid: fe4e76a417b2a0849a862e95572341ee, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &1017918201
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1017918202}
+  - 132: {fileID: 1017918203}
+  m_Layer: 0
+  m_Name: GUI Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1017918202
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1017918201}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .0305586979, y: .034866333, z: .512774944}
+  m_LocalScale: {x: .0611173958, y: .0611173958, z: .0611173958}
+  m_Children: []
+  m_Father: {fileID: 1181877507}
+--- !u!132 &1017918203
+GUIText:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1017918201}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Text: "TeaTime Studio\r\npresents"
+  m_Anchor: 4
+  m_Alignment: 1
+  m_PixelOffset: {x: 0, y: 0}
+  m_LineSpacing: .550000012
+  m_TabSize: 4
+  m_Font: {fileID: 12800000, guid: e19e29815e6fe4944a502abf379fd391, type: 3}
+  m_Material: {fileID: 0}
+  m_FontSize: 90
+  m_FontStyle: 2
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_PixelCorrect: 1
+  m_RichText: 1
 --- !u!1 &1080894769
 GameObject:
   m_ObjectHideFlags: 0
@@ -488,7 +538,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -8.39000034}
   m_LocalScale: {x: 16.3619537, y: 16.3619537, z: 16.3619537}
-  m_Children: []
+  m_Children:
+  - {fileID: 1017918202}
   m_Father: {fileID: 0}
 --- !u!1 &1461528762
 GameObject:
@@ -607,7 +658,7 @@ Transform:
   m_GameObject: {fileID: 1687384201}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -2.79234505, z: -.330000013}
-  m_LocalScale: {x: .0236283317, y: .0236283317, z: .0236283317}
+  m_LocalScale: {x: .117113046, y: .117113046, z: .117113046}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!1 &1753643999

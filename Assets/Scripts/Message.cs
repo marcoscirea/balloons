@@ -8,7 +8,31 @@ public class Message : MonoBehaviour {
     public int timerlength = 3;
     float timerstart;
     TextMesh t;
-    string[] messages = {"Fabulous", "Marvelous", "Ballooney", "OMG", "Poptastic"};
+    string[] messages = {"Fabulous", "Marvelous", "Ballooney", "OMG", "Poptastic", "Amazing",
+        "Awesome",
+        "Blithesome",
+        "Excellent",
+        "Fabulous",
+        "Fantastic",
+        "Favorable",
+        "Fortuitous",
+        "Great",
+        "Incredible",
+        "Ineffable",
+        "Mirthful",
+        "Outstanding",
+        "Perfect",
+        "Propitious",
+        "Remarkable",
+        "Smart",
+        "Spectacular",
+        "Splendid",
+        "Stellar",
+        "Stupendous",
+        "Super",
+        "Ultimate",
+        "Unbelievable",
+        "Wondrous"};
 
     public Color[] colors;
 
